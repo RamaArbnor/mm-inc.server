@@ -35,6 +35,12 @@ app.get("/bills", async (req, res) => {
    res.send(results)
 });
 
+app.get("/all-bills", async (req, res) => {
+   const results = await Bill.find()
+
+   res.send(results)
+});
+
 app.post("/add/bill", async (req, res) => {
     const {name, data, description, amount, paid} = req.body
     
